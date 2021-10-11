@@ -84,7 +84,7 @@ namespace AcademyDWeek2
                 {
                     Console.WriteLine("\nFai la tua scelta");
                     sceltaUtente = Console.ReadKey().KeyChar;
-                    //} while (sceltaUtente=='A' || sceltaUtente=='B' || sceltaUtente == 'C' || sceltaUtente == 'D'); //case sensitive
+                    //} while (!(sceltaUtente=='A' || sceltaUtente=='B' || sceltaUtente == 'C' || sceltaUtente == 'D')); //case sensitive
                 } while (!(sceltaUtente.ToString().ToUpper() == "A" || sceltaUtente.ToString().ToUpper() == "B" || sceltaUtente.ToString().ToUpper() == "C" || sceltaUtente.ToString().ToUpper() == "D")); //case sensitive
 
                 Console.WriteLine($"la tua scelta è {sceltaUtente}");
