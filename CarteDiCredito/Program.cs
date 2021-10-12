@@ -35,7 +35,101 @@ namespace CarteDiCredito
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("Inserisci il numero della tua carta di credito:");
+            const int N = 16;
+            int[] cartadiCredito = new int[N];
+            int[] posizioniPari = new int[N / 2];
+            int[] posizioniDispari = new int[N / 2];
+            int countPari = 0;
+            int countDispari = 0;
+
+            for (int i = 0; i < cartadiCredito.Length; i++)
+            {
+                int numero;
+                while (!(int.TryParse(Console.ReadLine(), out numero) && numero>=0 && numero <=9))
+                {
+                    Console.WriteLine("Inserisci un valore corretto");
+                }
+                cartadiCredito[i] = numero;
+            }
+
+            Console.WriteLine("La carta inserita è la seguente:");
+            for (int i = 0; i < cartadiCredito.Length; i++)
+            {
+                Console.Write(cartadiCredito[i]);
+            }
+
+            for (int i = 0; i < cartadiCredito.Length; i++)
+            {
+                if (i % 2 == 0)
+                {
+                    posizioniDispari[countDispari] = cartadiCredito[i];
+                    countDispari++;
+                }
+                else
+                {
+                    posizioniPari[countPari] = cartadiCredito[i];
+                    countPari++;
+                }
+            }
+
+            //Stampo i 2 array
+            Console.WriteLine("\nArray con le sole cifre che stanno in posizione Dispari");
+            for (int i = 0; i < posizioniDispari.Length; i++)
+            {
+                Console.Write(posizioniDispari[i]);
+            }
+            Console.WriteLine("\nArray con le sole cifre che stanno in posizione Pari");
+            for (int i = 0; i < posizioniPari.Length; i++)
+            {
+                Console.Write(posizioniPari[i]);
+            }
+
+            int[] posizioniDispariRaddoppiate = new int[N / 2];
+            for (int i = 0; i < posizioniDispariRaddoppiate.Length; i++)
+            {
+                if (posizioniDispari[i] * 2 >= 10)
+                {
+                    posizioniDispariRaddoppiate[i] = (posizioniDispari[i] * 2)-9;
+                }
+                else
+                {
+                    posizioniDispariRaddoppiate[i] = posizioniDispari[i] * 2;
+                }               
+            }
+            Console.WriteLine("\nArray con le cifre in posizioni dispari raddoppiate*");
+            for (int i = 0; i < posizioniDispariRaddoppiate.Length; i++)
+            {
+                Console.Write(posizioniDispariRaddoppiate[i]);
+            }
+
+            int totaleCifreArrayDispariRadd = 0;
+            foreach (var item in posizioniDispariRaddoppiate)
+            {
+                totaleCifreArrayDispariRadd = totaleCifreArrayDispariRadd + item;
+            }
+            Console.WriteLine($"\nLa somma delle cifre dell'array dispari raddoppiato è {totaleCifreArrayDispariRadd}");
+
+            int totaleCifreArrayPari = 0;
+            foreach (var item in posizioniPari)
+            {
+                totaleCifreArrayPari = totaleCifreArrayPari + item;
+            }
+            Console.WriteLine($"\nLa somma delle cifre dell'array pari è {totaleCifreArrayPari}");
+
+            int totale = totaleCifreArrayDispariRadd + totaleCifreArrayPari;
+
+            Console.WriteLine($"\nLa somma totale delle cifre è {totale}");
+
+            if (totale % 10 == 0)
+            {
+                Console.WriteLine("La carta è valida");
+            }
+            else
+            {
+                Console.WriteLine("La carta NON è valida");
+            }
+
         }
     }
 }
