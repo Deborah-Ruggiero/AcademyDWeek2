@@ -16,7 +16,44 @@ namespace Interessi
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("Calcola interessi!");
+            Console.WriteLine("Inserisci il tuo importo iniziale");
+            double importoIniziale = double.Parse(Console.ReadLine()); //TODO: aggiungere controlli su esito conversione e su positività
+            Console.WriteLine("Inserisci gli anni da vincolare");
+            int totaleAnni = int.Parse(Console.ReadLine()); //TODO: aggiungere controlli su esito conversione e su positività
+            Console.WriteLine("Inserisci l'interesse");
+            double interesse = double.Parse(Console.ReadLine()); //TODO: aggiungere controlli su esito conversione e su positività
+
+            double importoFinale = CalcolaInteressiIterazione(importoIniziale, totaleAnni, interesse);
+            Console.WriteLine($"L'importo finale dopo {totaleAnni} anni (calcolato con Iterazione) è di {importoFinale}");
+
+            double importoFinaleRic = CalcolaInteressiRicorsione(importoIniziale, totaleAnni, interesse);
+            Console.WriteLine($"L'importo finale dopo {totaleAnni} anni (calcolato con Ricorsione) è di {importoFinaleRic}");
+
+        }
+
+        private static double CalcolaInteressiRicorsione(double importoIniziale, int totaleAnni, double interesse)
+        {
+
+            if (totaleAnni == 0)
+            {
+                return importoIniziale;
+            }
+            else
+            {
+                return CalcolaInteressiRicorsione(importoIniziale + (importoIniziale * 3 / 100), --totaleAnni, interesse);
+
+            }
+        }
+
+        private static double CalcolaInteressiIterazione(double importo, int totaleAnni, double interesse)
+        {
+
+            for (var i = 0; i < totaleAnni; i++)
+            {
+                importo = importo + (importo * interesse / 100);
+            }
+            return importo;
         }
     }
 }
