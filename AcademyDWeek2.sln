@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScritturaLetturaDaFile", "S
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IndovinaNumero", "IndovinaNumero\IndovinaNumero.csproj", "{863C1324-0991-46BF-B059-8A31E37EA113}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IterazioneRicorsione", "IterazioneRicorsione\IterazioneRicorsione.csproj", "{D201BCA7-F80D-46E1-9019-3AF24AC90676}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{863C1324-0991-46BF-B059-8A31E37EA113}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{863C1324-0991-46BF-B059-8A31E37EA113}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{863C1324-0991-46BF-B059-8A31E37EA113}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D201BCA7-F80D-46E1-9019-3AF24AC90676}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D201BCA7-F80D-46E1-9019-3AF24AC90676}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D201BCA7-F80D-46E1-9019-3AF24AC90676}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D201BCA7-F80D-46E1-9019-3AF24AC90676}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
