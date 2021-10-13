@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarteDiCredito", "CarteDiCr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScritturaLetturaDaFile", "ScritturaLetturaDaFile\ScritturaLetturaDaFile.csproj", "{B6E0EFD6-D783-46BD-AA35-001149B5D7A0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IndovinaNumero", "IndovinaNumero\IndovinaNumero.csproj", "{863C1324-0991-46BF-B059-8A31E37EA113}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{B6E0EFD6-D783-46BD-AA35-001149B5D7A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B6E0EFD6-D783-46BD-AA35-001149B5D7A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B6E0EFD6-D783-46BD-AA35-001149B5D7A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{863C1324-0991-46BF-B059-8A31E37EA113}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{863C1324-0991-46BF-B059-8A31E37EA113}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{863C1324-0991-46BF-B059-8A31E37EA113}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{863C1324-0991-46BF-B059-8A31E37EA113}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
