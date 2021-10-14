@@ -47,7 +47,7 @@ namespace Libreria
 
         private static Genere InserisciGenere()
         {
-            Console.WriteLine("Inserisci il genere del libro");
+            Console.WriteLine("Inserisci il genere");
             Console.WriteLine($"Premi {(int)Genere.Narrativa} per il genere {Genere.Narrativa}");
             Console.WriteLine($"Premi {(int)Genere.Storico} per il genere {Genere.Storico}");
             Console.WriteLine($"Premi {(int)Genere.Fantasy} per il genere {Genere.Fantasy}");
@@ -112,7 +112,68 @@ namespace Libreria
 
         public static void ModificaLibro()
         {
-            throw new NotImplementedException();
+            //Stampo i libri
+            Console.WriteLine("I Libri presenti nella libreria sono");
+            StampaLibri();
+            //Scegli il libro che vuoi modificare (tramite il codice)
+            Console.WriteLine("Inserisci il codice del libro che vuoi modificare");
+            string codice=Console.ReadLine();
+            Libro libroDaModificare=CercaLibro(codice);
+            if (libroDaModificare == null)
+            {
+                Console.WriteLine("Nessun libro corrispondente al codice che hai inserito.");
+            }
+            else
+            {
+                bool continua = true;
+                do
+                {
+                    Console.WriteLine("Premi 1 per modificare il Titolo");
+                    Console.WriteLine("Premi 2 per modificare l'autore");
+                    Console.WriteLine("Premi 3 per modificare il genere");
+                    Console.WriteLine("Premi 4 per modificare il prezzo");
+                    Console.WriteLine("Premi 5 per modificare la data di pubblicazione");
+                    Console.WriteLine("Premi 0 per concludere la modifica");
+
+                    int scelta;
+                    do
+                    {
+                        Console.WriteLine("Fai la tua scelta");
+                    } while (!(int.TryParse(Console.ReadLine(), out scelta) && scelta >= 0 && scelta <= 5));
+
+
+                    switch (scelta)
+                    {
+                        case 1:
+                            Console.WriteLine("Inserisci il nuovo titolo");
+                            libroDaModificare.Titolo = Console.ReadLine();
+                            break;
+                        case 2:
+                            Console.WriteLine("Inserisci il nuovo autore");
+                            libroDaModificare.Autore = Console.ReadLine();
+                            break;
+                        case 3:
+                            //Genere nuovoGenere = InserisciGenere();
+                            //libroDaModificare.Genere = nuovoGenere;
+                            libroDaModificare.Genere = InserisciGenere();
+                            break;
+                        case 4:
+                            libroDaModificare.Prezzo = InserisciPrezzo();
+                            break;
+                        case 5:
+                            libroDaModificare.DataPubblicazione = InserisciDataPubblicazione();
+                            break;
+                        case 0:
+                            continua = false;
+                            break;
+                    }
+
+                } while (continua);
+
+            }
+            //Menu con possibili opzioni (es. 1. per modifica titolo, 2 per autore...)
+            //modifica sul campo desiderato.
+            
         }
 
         public static void StampaLibriDiUnaLista(List<Libro> listaLibri)
@@ -138,7 +199,19 @@ namespace Libreria
 
         public static void FiltraLibriPerGenere()
         {
-            throw new NotImplementedException();
+            Genere g= InserisciGenere();
+            
+            List<Libro> libriFiltrati = new List<Libro>();
+            
+            foreach (var item in libri)
+            {
+                if (item.Genere == g)
+                {
+                    libriFiltrati.Add(item);
+                }
+            }
+
+            StampaLibriDiUnaLista(libriFiltrati);
         }
     }
 }
